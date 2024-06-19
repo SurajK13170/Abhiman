@@ -1,8 +1,11 @@
 const {Sequelize, DataTypes} = require('sequelize')
-const sequelize = new Sequelize('ChatRoom', 'root', 'suraj8700', {
-    host: 'localhost',
+require("dotenv").config()
+const Password_sql = process.env.Password_sql
+const host = process.env.host
+const sequelize = new Sequelize('ChatRooms', "avnadmin", Password_sql, {
+    host: host,
     dialect: "mysql",
-    port: 3306
+    port: 21206
 })
 
 module.exports = {sequelize, DataTypes}
